@@ -1,0 +1,240 @@
+/* ============================================
+   Chaalbaaz Overlay — Chess.com Suggestion Panel
+   ============================================ */
+
+#chaalbaaz-overlay {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  background: #1e1e2e;
+  border: 1px solid #3d3d5c;
+  border-radius: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  color: #cdd6f4;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  margin-left: 16px;
+  overflow: hidden;
+  position: relative;
+  align-self: flex-start;
+  top: 0;
+  z-index: 9999;
+}
+
+/* ---- Header ---- */
+.chaalbaaz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #181825;
+  border-bottom: 1px solid #3d3d5c;
+}
+
+.chaalbaaz-logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: #cba6f7;
+  letter-spacing: 0.3px;
+}
+
+.chaalbaaz-close {
+  background: none;
+  border: none;
+  color: #6c7086;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.chaalbaaz-close:hover { color: #f38ba8; }
+
+/* ---- Body ---- */
+.chaalbaaz-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 80px;
+}
+
+/* ---- Loading ---- */
+.chaalbaaz-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c7086;
+  font-size: 12px;
+}
+
+.chaalbaaz-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #3d3d5c;
+  border-top-color: #cba6f7;
+  border-radius: 50%;
+  animation: chaalbaaz-spin 0.8s linear infinite;
+}
+
+@keyframes chaalbaaz-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- Best Move ---- */
+.chaalbaaz-best-move {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2a2a3e;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.chaalbaaz-best-label {
+  font-size: 11px;
+  color: #6c7086;
+  flex: 1;
+}
+
+.chaalbaaz-best-san {
+  font-size: 22px;
+  font-weight: 800;
+  color: #a6e3a1;
+  letter-spacing: -0.5px;
+}
+
+.chaalbaaz-eval {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.chaalbaaz-eval.positive {
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, 0.1);
+}
+
+.chaalbaaz-eval.negative {
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.1);
+}
+
+/* ---- Principal Variation ---- */
+.chaalbaaz-pv {
+  font-size: 11px;
+  color: #6c7086;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+/* ---- Eval Bar ---- */
+.chaalbaaz-eval-bar {
+  display: flex;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #3d3d5c;
+}
+
+.chaalbaaz-eval-white {
+  background: #e8e8e8;
+  transition: width 0.4s ease;
+  border-radius: 3px 0 0 3px;
+}
+
+.chaalbaaz-eval-black {
+  background: #2a2a3e;
+  transition: width 0.4s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* ---- Top Moves ---- */
+.chaalbaaz-top-moves {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chaalbaaz-move-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #2a2a3e;
+  transition: background 0.15s;
+}
+
+.chaalbaaz-move-row:hover { background: #313145; }
+
+.chaalbaaz-move-row.best {
+  border-left: 3px solid #a6e3a1;
+}
+
+.chaalbaaz-move-rank {
+  font-size: 10px;
+  color: #6c7086;
+  width: 12px;
+}
+
+.chaalbaaz-move-san {
+  font-weight: 700;
+  color: #cdd6f4;
+  flex: 1;
+  font-size: 13px;
+}
+
+.chaalbaaz-move-eval {
+  font-size: 11px;
+  color: #89b4fa;
+  font-weight: 600;
+}
+
+.chaalbaaz-move-depth {
+  font-size: 10px;
+  color: #45475a;
+}
+
+/* ---- Status messages ---- */
+.chaalbaaz-status {
+  text-align: center;
+  padding: 12px;
+  font-weight: 600;
+  color: #cba6f7;
+}
+
+.chaalbaaz-check {
+  font-size: 11px;
+  color: #fab387;
+  text-align: center;
+  font-weight: 600;
+}
+
+.chaalbaaz-cached {
+  font-size: 10px;
+  color: #45475a;
+  text-align: right;
+}
+
+.chaalbaaz-waiting {
+  color: #6c7086;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* ---- Footer ---- */
+.chaalbaaz-footer {
+  padding: 6px 14px;
+  background: #181825;
+  border-top: 1px solid #3d3d5c;
+}
+
+.chaalbaaz-disclaimer {
+  font-size: 10px;
+  color: #45475a;
+}
