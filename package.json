@@ -1,0 +1,27 @@
+{
+  "name": "chaalbaaz-extension",
+  "version": "0.1.0",
+  "description": "Chaalbaaz — AI chess move prediction overlay for Chess.com",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --config webpack.config.js --mode development --watch",
+    "build": "webpack --config webpack.config.js --mode production",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/jest": "^29.5.12",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "ts-loader": "^9.5.1",
+    "eslint": "^9.2.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.3",
+    "copy-webpack-plugin": "^12.0.2"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.0"
+  }
+}
